@@ -1,27 +1,13 @@
 #!/usr/bin/env lsc
-require! <[ express response-time winston ]>
-
-process.express = express
-
-argv = require('yargs').argv
-
-router = express.Router()
-app = express()
-
-# settings
+require! <[ response-time ]>
+process.express = require('express')
+app = process.express()
 app
-	.use response-time()               # include response time in headers
-	.use (req,res,next)->
-		console.log req.url
-		next()
-	#.use '/static', express.static(__dirname + '/static')
-	#.use '/', require! \./index
+	.use response-time()
 	.use '/api', require('./api.js')
-	#.use '/test', require! \./test
-
-if argv.http? or process.env.http? or process.env.PORT?
-	winston.info 'started on port '+(argv.http || process.env.http || process.env.PORT)+' at '+new Date(Date.now())
-	server = app.listen (argv.http || process.env.http || process.env.PORT)
+if process.env.http? or process.env.PORT?
+	console.log 'started on port '+(process.env.http || process.env.PORT)+' at '+new Date(Date.now())
+	server = app.listen (process.env.http || process.env.PORT)
 else
-	winston.error 'no port specified please use --http <port> / http or port environment variable'
+	console.error 'no port specified please use --http <port> / http or port environment variable'
 	process.exit()

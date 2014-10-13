@@ -1,6 +1,5 @@
 module.exports = ->
-	app = process.express()
-	app.get '/:action', (req, res)->
-			console.log (req.params)
+	process.express()
+		.get '/:action', (req, res)->
 			res.send req.params.action
 	return app
