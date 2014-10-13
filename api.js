@@ -4,7 +4,6 @@ module.exports = function(){
   express = require('express');
   app = express();
   app.get('/:action', function(req, res){
-    console.log(req.params);
     return res.send(req.params.action);
   });
   return app;
