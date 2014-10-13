@@ -1,4 +1,4 @@
-module.exports = ->
+module.exports = do ->
 	require! express
 	app = express()
 	app.get '/:action', (req, res)->
