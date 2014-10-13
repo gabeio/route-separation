@@ -3,6 +3,7 @@ var express, responseTime, winston, argv, router, app, server;
 express = require('express');
 responseTime = require('response-time');
 winston = require('winston');
+process.express = express;
 argv = require('yargs').argv;
 router = express.Router();
 app = express();

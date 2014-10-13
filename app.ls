@@ -1,6 +1,8 @@
 #!/usr/bin/env lsc
 require! <[ express response-time winston ]>
 
+process.express = express
+
 argv = require('yargs').argv
 
 router = express.Router()
