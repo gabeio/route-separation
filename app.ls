@@ -1,5 +1,5 @@
 #!/usr/bin/env lsc
-require! response-time
+require! \response-time
 process.express = require('express')
 app = process.express()
 app
