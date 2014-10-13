@@ -1,0 +1,12 @@
+echo 'curl localhost:8080/'
+curl localhost:8080/
+echo 'curl localhost:8080/api/'
+curl localhost:8080/api/
+echo 'curl localhost:8080/api/test'
+curl localhost:8080/api/test
+echo 'curl localhost:8080/api/test1'
+curl localhost:8080/api/test1
+echo 'curl localhost:8080/api/test12'
+curl localhost:8080/api/test12
+echo 'curl localhost:8080/api/test123'
+curl localhost:8080/api/test123
