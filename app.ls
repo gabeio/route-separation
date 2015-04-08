@@ -10,7 +10,8 @@ app
 
 app
 	.use response-time()               # include response time in headers
-	.use '/api', require('./api.js')
+
+require('./api.js')(app)
 
 if process.env.http? or process.env.PORT?
 	console.log 'started on port '+(process.env.http || process.env.PORT)+' at '+new Date(Date.now())

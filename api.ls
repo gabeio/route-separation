@@ -1,9 +1,7 @@
-module.exports = do ->
+module.exports = (app)->
 	require! {
-		"express"
 		"util"
 	}
-	app = express()
-	app.all '*', (req, res)->
-		res.send util.inspect app.locals
+	app.all '*', (req, res, next)->
+		console.log util.inspect res.app.locals
 	return app
