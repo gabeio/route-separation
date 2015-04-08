@@ -3,7 +3,7 @@ module.exports = do ->
 		"express"
 		"util"
 	}
-	app = express()
-	app.all '*', (req, res)->
-		res.send util.inspect app.locals
+	app = express.Router()
+	app.all '/', (req, res)->
+		res.send util.inspect req.app.locals
 	return app
