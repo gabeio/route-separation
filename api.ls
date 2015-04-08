@@ -1,6 +1,9 @@
 module.exports = do ->
-	require! express
+	require! {
+		"express"
+		"util"
+	}
 	app = express()
-	app.get '/:action', (req, res)->
-		res.send req.params.action
+	app.all '*', (req, res)->
+		res.send util.inspect app.locals
 	return app
